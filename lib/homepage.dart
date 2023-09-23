@@ -27,32 +27,39 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 10,
             ),
-            x == y ?  Container(
-              height: 220,
-              width: 220,
-              decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
-              child: Padding(
-                padding:  const EdgeInsets.only(
-                  left: 8,
-                  right: 8,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                     const Icon(
-                      Icons.done_all,
-                      color: Colors.green,
+            x == y ?  Column(
+              children: [
+                Container(
+                  height: 220,
+                  width: 220,
+                  decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
+                  child: Padding(
+                    padding:  const EdgeInsets.only(
+                      left: 8,
+                      right: 8,
                     ),
-                     const SizedBox(
-                      height: 15,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                         const Icon(
+                          Icons.done_all,
+                          color: Colors.green,
+                        ),
+                         const SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          'Congrtulation You Won the Lottery Your Match is $x',
+                          textAlign: TextAlign.center,
+                        )
+                      ],
                     ),
-                    Text(
-                      'Congrtulation You Won the Lottery Your Match is $x',
-                      textAlign: TextAlign.center,
-                    )
-                  ],
+                  ),
                 ),
-              ),
+                const SizedBox(height: 15,),
+                const Text('PLAY AGAIN',style: TextStyle(color: Colors.grey,fontSize: 20,fontWeight: FontWeight.bold),),
+                const Text('By Clicking the Button',style: TextStyle(color: Colors.grey),)
+              ],
             )
             :
             Container(
@@ -75,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                       height: 15,
                     ),
                     Text(
-                      'Better Luck Next Time your number is ${x} Try Again',
+                      'Better Luck Next Time your number is $x Try Again',
                       textAlign: TextAlign.center,
                     )
                   ],
