@@ -27,68 +27,89 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 10,
             ),
-            x == y ?  Column(
-              children: [
-                Container(
-                  height: 220,
-                  width: 220,
-                  decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
-                  child: Padding(
-                    padding:  const EdgeInsets.only(
-                      left: 8,
-                      right: 8,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                         const Icon(
-                          Icons.done_all,
-                          color: Colors.green,
+            x == y
+                ? Column(
+                    children: [
+                      Container(
+                        height: 220,
+                        width: 220,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.3),
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(50),
+                              bottomLeft: Radius.circular(50),
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 8,
+                            right: 8,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.done_all,
+                                color: Colors.green,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                'Congrtulation You Won the Lottery Your Number is also $x',
+                                textAlign: TextAlign.center,
+                              )
+                            ],
+                          ),
                         ),
-                         const SizedBox(
-                          height: 15,
-                        ),
-                        Text(
-                          'Congrtulation You Won the Lottery Your Match is $x',
-                          textAlign: TextAlign.center,
-                        )
-                      ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Text(
+                        'PLAY AGAIN',
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const Text(
+                        'By Clicking the Button',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  )
+                : Container(
+                    height: 220,
+                    width: 220,
+                    decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.3),
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(50),
+                          bottomLeft: Radius.circular(50),
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 8,
+                        right: 8,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.error_outline,
+                            color: Colors.red,
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                            'Better Luck Next Time your number is $x Try Again',
+                            textAlign: TextAlign.center,
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 15,),
-                const Text('PLAY AGAIN',style: TextStyle(color: Colors.grey,fontSize: 20,fontWeight: FontWeight.bold),),
-                const Text('By Clicking the Button',style: TextStyle(color: Colors.grey),)
-              ],
-            )
-            :
-            Container(
-              height: 220,
-              width: 220,
-              decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 8,
-                  right: 8,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.error_outline,
-                      color: Colors.red,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      'Better Luck Next Time your number is $x Try Again',
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ),
-              ),
-            )
+                  )
           ],
         ),
       ),
